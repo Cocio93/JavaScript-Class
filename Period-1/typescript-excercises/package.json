@@ -1,0 +1,17 @@
+{
+  "name": "typescript-excercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ex3": "node ex3.js",
+    "ex4": "node ex4.js",
+    "ex6": "node ex6.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node-fetch": "^1.6.7"
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <div id="namesTable">
+
+    </div>
+
+    <div id="namesList">
+
+    </div>
+
+    <button type="button" id="button">Click me!</button>
+
+    <script src="ex4.js"></script>
+    <script>
+        document.getElementById("namesTable").innerHTML = tableCode;
+        document.getElementById("namesList").innerHTML = listCode;
+        document.getElementById("button").addEventListener("click", filterTable());
+    </script>
+
+</body>
+
+</html>
