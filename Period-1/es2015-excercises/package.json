@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "ex2": "node ex2.js",
+    "ex3": "node ex3.js",
+    "ex5": "node ex5.js",
+    "ex6": "node ex6.js",
+    "ex7": "node ex7.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
