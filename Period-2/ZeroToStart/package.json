@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +14,7 @@
     "express": "^4.15.4",
     "jade": "^1.11.0",
     "morgan": "^1.8.2",
+    "nodemon": "^1.12.1",
     "pug": "^2.0.0-rc.4"
   }
 }

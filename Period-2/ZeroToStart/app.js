@@ -1,5 +1,5 @@
 var logger = require('morgan');
-var routes = require('./routes/index');
+var router = require('./routes');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
@@ -18,35 +18,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-// Index Page
-app.use('/', routes);
+app.use('/', router);
 
-// Login page simulation
-var names = [];
-app.get('/form', function (req, res) {
-    res.render('form', { names: names});
-});
-
-app.post('/form', function (req, res) {
-    if (req.body.status == 'add') {
-        names.push(req.body.name);
-        res.redirect('/form');
-    } else 
-    if (req.body.status == 'remove') {
-        names = [];
-        res.redirect('/form');
-    } else {
-        res.redirect('/form');
-    }
-
-});
-
-app.post('/names', function (req, res) {
-    names.push(req.body); //We receive it as a JavaScript object
-    console.log(JSON.stringify(req.body)); 
-    res.redirect('/form');
-});
-  
 // Error Handling
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
