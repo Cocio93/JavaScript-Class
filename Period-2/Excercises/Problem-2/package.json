@@ -1,0 +1,20 @@
+{
+  "name": "problem-2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.8",
+    "express": "~4.15.2",
+    "find-parent-dir": "^0.3.0",
+    "jade": "^1.11.0",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.12.1",
+    "serve-favicon": "~2.4.2",
+    "stylus": "^0.54.5"
+  }
+}

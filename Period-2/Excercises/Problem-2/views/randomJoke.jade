@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= 'A Random Joke'
+  label #{randomJoke}
+  form(method='POST' action='../')
+          div.form-group
+            button.btn.btn-primary(type='submit') Back
+
