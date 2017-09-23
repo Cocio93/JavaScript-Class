@@ -3,3 +3,7 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  form(method='GET' action='./jokes')
+    div.form-group
+      button.btn.btn-primary(type='submit') Jokes

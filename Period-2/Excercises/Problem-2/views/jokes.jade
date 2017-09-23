@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= 'All Jokes'
+  ul
+  for joke in jokes
+    li=joke
+  br
+  form(method='GET' action='../')
+          div.form-group
+            button.btn.btn-primary(type='submit') Back
+    br
+  form(method='GET' action='./jokes/random')
+          div.form-group
+            button.btn.btn-primary(type='submit') Random Joke
+    br
+  form(method='GET' action='./jokes/add')
+          div.form-group
+            button.btn.btn-primary(type='submit') Add Joke
