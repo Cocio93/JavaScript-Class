@@ -2,14 +2,12 @@ extends layout
 
 block content
    h1= 'Add a joke'
-   form(method='POST' action='./addjoke')
+   form(method='POST' action='/addjoke')
         div.form-group
             input(type='text', name='joke', required=true)
             button.btn.btn-primary(type='submit') Add
 
     label #{jokeAdded}
-
-    form(method='GET' action='../jokes')
-        div.form-group
-            button.btn.btn-primary(type='submit') Back
+    br
+    a(href="/") Back
 
