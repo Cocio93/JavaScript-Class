@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var stylus = require('stylus');
 var index = require('./routes/index');
 var jokes = require('./routes/jokes');
+var jokesApi = require('./routes/api/jokes');
 
 var app = express();
 
@@ -21,7 +22,6 @@ app.use(cookieParser());
 app.use(session({secret:'secret_3162735',saveUninitialized:true, resave: true}));
 
 app.use('/jokes', function isAuthenticated(req, res, next) {
-  console.log("middleware");
   if(!req.session.userName) {
     res.redirect("/");
  } else {
@@ -33,6 +33,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/jokes', jokes);
+app.use("/api/jokes", jokesApi)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

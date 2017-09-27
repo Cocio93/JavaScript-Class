@@ -5,6 +5,7 @@ block content
   label Welcome #{username}
   ul
   for joke in jokes
-    li=joke
+    li
+      a(href="/jokes/" + jokes.indexOf(joke)) #{joke}
   br
   a(href="/") Back
