@@ -12,7 +12,8 @@
     "mocha": "^3.5.3"
   },
   "scripts": {
-    "test": "mocha ./calculator/test/jokeTest.js"
+    "calc_test": "mocha ./calculator/test/test.js",
+    "joke_test": "mocha ./calculator/test/jokeTest.js"
   },
   "author": "",
   "license": "ISC"

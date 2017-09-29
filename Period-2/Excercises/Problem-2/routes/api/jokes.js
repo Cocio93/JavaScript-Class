@@ -4,39 +4,34 @@ var path = require("path");
 var jokeModel = require('../../model/jokes.js');
 
 router.get('/', function(req, res, next) {
-    if (req.session.jokesCount) {
-        req.session.jokesCount++;
-    } else {
-        req.session.jokesCount = 1;
-    }
     res.send({ jokes: jokeModel.jokes.allJokes});
   });
 
 router.get('/random', function(req, res, next) {
-    if (req.session.jokeCount) {
-        req.session.jokeCount++;
-    } else {
-        req.session.jokeCount = 1;
-    }
     randomJoke = jokeModel.jokes.getRandomJoke();
-    res.send('joke', { randomJoke: randomJoke });
+    res.send({ joke: randomJoke });
 });
 
-router.post('/add', function(req, res, next) {
+router.post('/', function(req, res, next) {
     var joke = req.body.joke;
     jokeModel.jokes.addJoke(joke);
-    res.send({ message: 'Joke successfully added'});
+    res.send({ joke: joke});
 });
 
 router.get('/:id', function(req, res, next) {
     var id = req.params.id;
     var jokes = jokeModel.jokes.allJokes;
     if (id > jokes.length) {
-        throw new Error("Not so many jokes");
+        res.status(500).send({error: 'Joke doesnt exist'});
     } else {
         req.body.joke = jokes[id];     
-        res.send({joke: req.body.joke}, 200 );
+        res.send({joke: req.body.joke});
     }
 });
+
+router.post('/reset', function(req, tes, next) {
+    jokeModel.jokes.resetJokes();
+    next();
+})
 
 module.exports = router;

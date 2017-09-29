@@ -2,7 +2,7 @@ extends layout
 
 block content
    h1= 'Add a joke'
-   form(method='POST' action='/addjoke')
+   form(method='POST' action='/jokes/addjoke')
         div.form-group
             input(type='text', name='joke', required=true)
             button.btn.btn-primary(type='submit') Add

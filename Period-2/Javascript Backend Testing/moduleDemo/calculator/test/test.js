@@ -2,6 +2,7 @@ var calculator = require('../lib/calculator');
 var expect = require("chai").expect;
 
 describe('calculator', function() {
+    console.log("INSIDE")
     describe('Verify the #add(n1, n2)', function() {
         it('Should return n1 plus n2', function() {
             expect(calculator.add(2, 2)).to.be.equal(4);
