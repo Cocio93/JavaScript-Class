@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "chai": "^4.1.2",
+    "mocha": "^3.5.3",
     "reqeust": "^2.81.1",
     "request": "^2.83.0"
   },
@@ -13,7 +14,8 @@
   },
   "scripts": {
     "calc_test": "mocha ./calculator/test/test.js",
-    "joke_test": "mocha ./calculator/test/jokeTest.js"
+    "joke_test": "mocha ./calculator/test/jokeTest.js",
+    "async_test": "mocha ./calculator/test/asynchTest.js"
   },
   "author": "",
   "license": "ISC"
